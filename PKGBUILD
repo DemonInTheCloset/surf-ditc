@@ -12,9 +12,8 @@ optdepends=('dmenu: URL-bar'
             'curl: default download handler'
             'tabbed: tabbed frontend')
 makedepends=()
-install='surf.install'
 source=("https://github.com/DemonInTheCloset/surf/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('')
+sha256sums=('5bf480fe75078a562b3343e4872fa4215eb081fca7ecce9dc7547eaa5c881e5b')
 
 prepare() {
     if [[ -f ../config.h ]]; then
