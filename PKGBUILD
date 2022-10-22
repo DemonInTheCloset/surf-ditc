@@ -14,7 +14,7 @@ optdepends=('dmenu: URL-bar'
             'tabbed: tabbed frontend')
 makedepends=()
 source=("https://github.com/DemonInTheCloset/surf/archive/refs/tags/${pkgver}-patched.tar.gz")
-sha256sums=('5bf480fe75078a562b3343e4872fa4215eb081fca7ecce9dc7547eaa5c881e5b')
+sha256sums=('a1e666b36f5d0dc9ebb9134ebf1fcc4b5d8704170c87eb59fb3893c965f90095')
 
 prepare() {
     if [[ -f ../config.h ]]; then
@@ -24,12 +24,13 @@ prepare() {
 }
 
 build() {
-    cd "${_pkgname}-${pkgver}"
+    cd "${_pkgname}-${pkgver}-patched"
+    patch -p1 < patches/0000-All-Patches.patch
     make
 }
 
 package() {
-    cd "${_pkgname}-${pkgver}"
+    cd "${_pkgname}-${pkgver}-patched"
 
     make PREFIX=/usr DESTDIR="${pkgdir}" install
     install -Dm0644 LICENSE "${pkgdir}/usr/share/licenses/${_pkgname}/LICENSE"
