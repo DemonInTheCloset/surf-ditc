@@ -1,0 +1,19 @@
+pkgbase = surf-ditc
+	pkgdesc = A simple web browser based on WebKit/GTK+. Patched by DemonInTheCloset
+	pkgver = 2.1
+	pkgrel = 1
+	url = https://surf.suckless.org/
+	arch = x86_64
+	license = MIT
+	depends = webkit2gtk
+	depends = gcr
+	depends = xorg-xprop
+	optdepends = dmenu: URL-bar
+	optdepends = ca-certificates: SSL verification
+	optdepends = xterm: default download handler
+	optdepends = curl: default download handler
+	optdepends = tabbed: tabbed frontend
+	source = https://github.com/DemonInTheCloset/surf/archive/refs/tags/2.1.tar.gz
+	sha256sums = 5bf480fe75078a562b3343e4872fa4215eb081fca7ecce9dc7547eaa5c881e5b
+
+pkgname = surf-ditc
